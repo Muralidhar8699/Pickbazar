@@ -1,0 +1,44 @@
+@mixin flexBox($direction, $aligment, $justify) {
+  display: flex;
+  align-items: $aligment;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+@mixin button($padding, $bgColor, $color, $hoverBGColor, $hoverColor) {
+  outline: none;
+  border: none;
+  background-color: $bgColor;
+  color: $color;
+  padding: $padding;
+  &:hover {
+    background-color: $hoverBGColor;
+    color: $hoverColor;
+  }
+}
+
+@mixin lightFont($fontSize) {
+  font-family: "Rubik", "sans-serif";
+  font-weight: 300;
+  font-size: $fontSize;
+}
+@mixin regularFont($fontSize) {
+  font-family: "Rubik", "sans-serif";
+  font-weight: 400;
+  font-size: $fontSize;
+}
+@mixin mediumFont($fontSize) {
+  font-family: "Rubik", "sans-serif";
+  font-weight: 500;
+  font-size: $fontSize;
+}
+@mixin semiBoldFont($fontSize) {
+  font-family: "Rubik", "sans-serif";
+  font-weight: 600;
+  font-size: $fontSize;
+}
+@mixin boldFont($fontSize) {
+  font-family: "Rubik", "sans-serif";
+  font-weight: 800;
+  font-size: $fontSize;
+}

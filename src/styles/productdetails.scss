@@ -1,0 +1,197 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+.prodetails_maincontainer {
+  background-color: rgba(233, 232, 232, 0.578);
+  padding: 4rem 0;
+  .pdetails_container {
+    position: relative;
+    border-radius: 2rem;
+    .back_btn {
+      position: absolute;
+      top: -2%;
+      left: 5%;
+      border: 0;
+      outline: 0;
+      @include mediumFont(1rem);
+      text-decoration: underline;
+
+      .back_arrow {
+        transition: 0.5s;
+        color: red;
+      }
+    }
+    .back_btn:hover .back_arrow {
+      transition: 0.5s;
+      transform: translateX(-1rem) scale(1.5);
+    }
+
+    .related_products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
+      row-gap: 1rem;
+      padding: 5rem;
+      margin-top: 2rem;
+
+      .related_products_card {
+        @include flexBox(column, center, center);
+        background-color: white;
+        width: 15rem;
+        height: 20rem;
+        border-radius: 0.8rem;
+        transition: 0.4s;
+        text-align: start;
+        position: relative;
+
+        &:hover {
+          box-shadow: 4px 6px 10px -5px rgb(67, 65, 65);
+        }
+        &:hover .relatedpro_addbtn {
+          transition: 0.4s;
+          transform: translateY(20%);
+          opacity: 1;
+        }
+        .relatedpro_name {
+          width: 8rem;
+          text-wrap: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        .discount_price {
+          @include mediumFont(0.7rem);
+          color: white;
+          position: absolute;
+          top: 2%;
+          right: 2%;
+          background-color: $accent;
+          padding: 0.6rem 0.5rem;
+          border-radius: 0.5rem;
+        }
+
+        .relatedpro_addbtn {
+          border: 0;
+          outline: 0;
+          text-align: center;
+          width: 10rem;
+          height: 2rem;
+          border-radius: 0.3rem;
+          background-color: $accent;
+          color: white;
+          transform: translateY(100%);
+          opacity: 0;
+          transition: 0.5s;
+        }
+
+        .related_products_img {
+          width: 10rem;
+          height: 10rem;
+          transition: 0.5s;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .productdetails_container {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      background-color: rgba(178, 191, 197, 0.558);
+      box-shadow: 3px 5px 20px 5px rgb(253, 249, 249);
+      padding: 1rem;
+      width: 70rem;
+      border-radius: 2rem;
+      // margin-top: 2rem;
+      margin-left: 14rem;
+
+      .desciption_div {
+        padding: 1rem;
+
+        .product_description {
+          max-width: 75ch;
+          text-wrap: pretty;
+        }
+
+        .productdetails_price {
+          @include mediumFont(1.2rem);
+        }
+
+        .propage_addbtn {
+          border: 0;
+          outline: 0;
+          @include mediumFont(1.2rem);
+          padding: 0.3rem 1rem;
+          background-color: white;
+          transition: 0.2s;
+          border-radius: 0.5rem;
+
+          &:hover {
+            box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem grey;
+            transform: scale(1.1);
+            background-color: $accent;
+            color: white;
+            transition: 0.2s;
+          }
+        }
+      }
+
+      .image_div {
+        width: 25rem;
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 3px 5px 20px 5px rgb(196, 194, 194);
+        position: relative;
+
+        .single_img {
+          width: 25rem;
+          background-color: white;
+          border-radius: 1rem;
+        }
+        .product_page_discount {
+          text-align: center;
+          background-color: rgba(244, 170, 66, 0.674);
+          width: 3rem;
+          height: 2rem;
+          border-radius: 0.5rem;
+          position: absolute;
+          top: 2%;
+          right: 2%;
+          z-index: 1;
+          font-weight: bold;
+        }
+
+        .slick-next {
+          z-index: 2;
+          position: absolute;
+          right: 10%;
+        }
+
+        .slick-prev {
+          z-index: 2;
+          position: absolute;
+          left: 8%;
+        }
+
+        .slick-next::before,
+        .slick-prev::before {
+          color: black !important;
+          box-shadow: 0.1px 0.1px 0.1px black;
+          width: 10px;
+          height: 10px;
+          font-size: 1.8rem;
+        }
+
+        .slider_img {
+          width: 20rem;
+          transition: 0.5s;
+          border-radius: 1rem;
+          background-color: white;
+
+          &:hover {
+            transition: 0.5s;
+            transform: scale(0.9);
+          }
+        }
+      }
+    }
+  }
+}

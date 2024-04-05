@@ -1,0 +1,112 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+.navbar_container {
+    @include flexBox(row, center, space-around);
+    gap: 2rem;
+    padding: .5rem 1rem;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 2;
+
+    .search_div{
+        border: 1px solid;
+        border-radius: .5rem;
+        .search_input{
+            width: 20rem;
+            height: 2rem;
+            border: 0;
+            outline: 0;
+            padding: 0 .5rem;
+            @include lightFont(1.2rem);
+            border-radius: .5rem;
+        }
+        .search_btn{
+            height: 2rem;
+            padding: 0 1rem;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            background-color: $accent;
+            color: white;
+            border-radius: .4rem;
+        
+        }
+    }
+    .nav_logo {
+        width: 10rem;
+        height: 1.8rem;
+        cursor: pointer;
+    }
+
+    .dropdown_div {
+        width: 20rem;
+
+        .dropdown_toggle {
+            background-color: $accent;
+            columns: $accent;
+            width: 12rem;
+            transition: .5s;
+            gap: 2rem;
+            @include flexBox(row, center, space-between);
+            
+            &:hover {
+                border-radius: 3rem 3rem 3rem 0;
+                background-color: $light;
+                color: $accent;
+            }
+        }
+        
+        .dropdown_menu {
+            box-shadow: .1rem .1rem .2rem rgb(122, 120, 120);
+            border-radius: 0 1rem 1rem 1rem;
+            padding: 1rem;
+            cursor: pointer;
+            
+            .dropdown_item {
+                @include regularFont(1.1rem);
+                width: 10rem;
+                color: $accent2;
+                transition: .3s;
+                padding: 0 0 0 .5rem;
+                border-radius: .3rem;
+
+                
+                &:hover {
+                    border-radius: .3rem;
+                    transform: scale(1.14);
+                    box-shadow: .1rem .1rem .2rem rgb(99, 99, 99);
+                    display: flex;
+                    
+                }
+            }
+        }
+        
+    }
+
+    .navbar_text {
+        @include mediumFont(1.1rem);
+        color: $black;
+        margin-top: 1rem;
+
+        &:hover {
+            color: $accent;
+            cursor: pointer;
+        }
+    }
+    .navbar_btn{
+        border: 0;
+        outline: 0;
+        background-color: $accent;
+        padding: .3rem 1rem;
+        border-radius: .4rem;
+        color: white;
+    }
+    .cart_icon{
+        font-size: 1.5rem;
+        color: $accent;
+        cursor: pointer;
+    }
+    
+}

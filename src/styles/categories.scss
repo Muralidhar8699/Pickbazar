@@ -1,0 +1,41 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+.categories_container {
+  @include flexBox(column, start, start);
+  position: sticky;
+  top: 12%;
+  display: block;
+  padding: 0.5rem;
+  align-self: flex-start;
+  background-color: white;
+  border-radius: 0.4rem;
+
+  .categories_div {
+    padding: 0.5rem;
+    display: flex;
+    color: $accent;
+    background-color: white;
+    
+
+    .categories_name {
+      border-radius: 0.4rem;
+      background-color: $gray1;
+      padding: 0.2rem 1rem;
+      @include mediumFont(1.2rem);
+      cursor: pointer;
+      width: 12rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+      box-shadow: rgba(0, 0, 0, 0.11) 0rem 0.25rem 0.4375rem -0.0625rem, rgba(0, 0, 0, 0.07) 0rem 0.125rem 0.25rem -0.0625rem;
+
+
+      &:hover {
+        box-shadow: 0.1rem 0.1rem 0.1rem gray;
+        background-color: $accent;
+        color: white;
+      }
+    }
+  }
+}
